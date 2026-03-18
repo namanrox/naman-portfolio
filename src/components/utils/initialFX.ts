@@ -1,10 +1,8 @@
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
-import { smoother } from "../Navbar";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
-  smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
     backgroundColor: "#0a0e17",
@@ -17,7 +15,7 @@ export function initialFX() {
     {
       type: "chars,lines",
       linesClass: "split-line",
-    }
+    },
   );
   gsap.fromTo(
     landingText.chars,
@@ -30,7 +28,7 @@ export function initialFX() {
       y: 0,
       stagger: 0.025,
       delay: 0.3,
-    }
+    },
   );
 
   let TextProps = { type: "chars,lines", linesClass: "split-h2" };
@@ -47,7 +45,7 @@ export function initialFX() {
       y: 0,
       stagger: 0.025,
       delay: 0.3,
-    }
+    },
   );
 
   gsap.fromTo(
@@ -59,7 +57,7 @@ export function initialFX() {
       ease: "power1.inOut",
       y: 0,
       delay: 0.8,
-    }
+    },
   );
   gsap.fromTo(
     [".header", ".icons-section", ".nav-fade"],
@@ -69,7 +67,7 @@ export function initialFX() {
       duration: 1.2,
       ease: "power1.inOut",
       delay: 0.1,
-    }
+    },
   );
 
   var landingText3 = new SplitText(".landing-h2-info-1", TextProps);
@@ -96,7 +94,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       stagger: 0.1,
       delay: delay,
     },
-    0
+    0,
   )
     .fromTo(
       Text1.chars,
@@ -108,7 +106,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
         stagger: 0.1,
         delay: delay2,
       },
-      1
+      1,
     )
     .fromTo(
       Text1.chars,
@@ -120,7 +118,7 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
         stagger: 0.1,
         delay: delay,
       },
-      0
+      0,
     )
     .to(
       Text2.chars,
@@ -131,6 +129,6 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
         stagger: 0.1,
         delay: delay2,
       },
-      1
+      1,
     );
 }
